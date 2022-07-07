@@ -44,7 +44,7 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
         style="
           position: absolute;
           background: ${color};
-          top: ${subcategoryTitleHeight}px;
+          top: 0;
           bottom: 0;
           left: 0;
           right: 0;
@@ -72,7 +72,7 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
           height: 100%;
           display: flex;
           justify-content: space-evenly;
-          background: white;
+          background: rgba(100,100,100,0.6);
         ">
           ${subcategoriesWithCalculations.map((subcategory, index) => {
             const lastSubcategory = index !== subcategories.length - 1
@@ -80,9 +80,12 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
             const padding = fitWidth ? 0 : `${subcategoryMargin}px 0`;
             const style = `
               display: grid;
-              height: 100%;
+              height: 80%;
               grid-template-columns: repeat(${columns}, ${smallItemWidth}px);
               grid-auto-rows: ${smallItemHeight}px;
+              border-style: solid;
+              background: white;
+              margin: 30px 2px 2px 2px;
             `;
             const extraStyle = fitWidth ? `justify-content: space-evenly; align-content: space-evenly;` : `grid-gap: ${itemMargin}px;`;
             return `
@@ -95,7 +98,7 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
               ">
                 <div style="
                   position: absolute;
-                  top: ${-1 * categoryTitleHeight}px;
+                  top: ${-1 * categoryTitleHeight};
                   left: 0;
                   right: 0;
                   height: ${categoryTitleHeight}px;
@@ -103,6 +106,7 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
                   align-items: center;
                   justify-content: center;
                   text-align: center;
+                  font-style: italic;
                 ">
                   <a data-type="internal" href="${href}" class="white-link">${h(name)}</a>
                 </div>
