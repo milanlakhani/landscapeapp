@@ -85,7 +85,7 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
               grid-auto-rows: ${smallItemHeight}px;
               border-style: solid;
               background: white;
-              margin: 30px 2px 2px 2px;
+              margin: 15px 2px 2px 2px;
             `;
             const extraStyle = fitWidth ? `justify-content: space-evenly; align-content: space-evenly;` : `grid-gap: ${itemMargin}px;`;
             return `
@@ -97,11 +97,11 @@ module.exports.renderHorizontalCategory = function({ header, guideInfo, subcateg
                 box-sizing: border-box;
               ">
                 <div style="
-                  position: absolute;
-                  top: ${-1 * categoryTitleHeight};
+                  position: relative;
+                  top: 12;
                   left: 0;
                   right: 0;
-                  height: ${categoryTitleHeight}px;
+                  height: 25px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
