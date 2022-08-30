@@ -661,7 +661,7 @@ const CncfLandscapeApp = {
     const params = new URLSearchParams(search);
     const f = (name, x) => this.calculateFullSelection(name, x);
 
-    const parseMode = (x) => (x || '').indexOf('-mode') !== -1 ? 'card' : (x || CncfLandscapeApp.initialMode);
+    const parseMode = (x) => (x || '').indexOf('-mode') !== -1 ? 'card' : CncfLandscapeApp.initialMode;
     const parseCardStyle = (x) => (x || '').indexOf('-mode') !== -1 ? x.replace('-mode', '') : 'card';
     const parseParamStyle = (x) => ['logo', 'borderless', 'flat'].indexOf(x) !== -1 ? x : '';
 
